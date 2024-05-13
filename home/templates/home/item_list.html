@@ -34,12 +34,17 @@
             text-decoration: none;
             color: #007bff;
         }
+        .add-item-link {
+            margin-bottom: 20px;
+            display: block; /* Ensures the margin is applied below the link */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Inventory Item List</h1>
-        <a href="{% url 'add_item' %}">Add New Item</a>
+        <a class = "add-item-link" href="{% url 'add_item' %}">Add New Item</a>
+        <a class = "add-item-link" href="{% url 'main_page' %}">Home Page</a>
         <table>
             <thead>
                 <tr>
@@ -56,8 +61,10 @@
                         <td>{{ item.name }}</td>
                         <td>{{ item.description }}</td>
                         <td>{{ item.quantity }}</td>
-                        <td>{{ item.price }}</td>
-                        <td><a href="{% url 'update_quantity' item.pk %}">Edit</a></td>
+                        <td>${{ item.price }}</td>
+                        <td><a href="{% url 'update_quantity' item.pk %}">Edit</a> / 
+                            <a href ="{% url 'delete_item' item.pk %}"> delete</a>
+                        </td>
                     </tr>
                 {% empty %}
                     <tr>

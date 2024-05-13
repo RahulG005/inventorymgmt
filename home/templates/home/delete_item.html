@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Item Deletion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-group {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn.cancel {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Item Deletion</h1>
+        <p>Are you sure you want to delete "{{ item.name }}"?</p>
+        <form action="{% url 'delete_item' item.pk %}" method="post">
+            {% csrf_token %}
+            <div class="btn-group">
+                <button type="submit" class="btn">Confirm</button>
+                <a href="{% url 'item_list' %}" class="btn cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Item List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(174, 13, 13, 0.1);
+            text-align: center;
+        }
+        .container h2 {
+            margin-bottom: 20px; /* Add margin below the greeting */
+        }
+        .container .button-container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center buttons horizontally */
+            flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+        }
+        .container button {
+            padding: 20px 40px; /* Add padding around each button */
+            background-color: #5100ff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 10px; /* Add margin around each button */
+        }
+        .container button:hover {
+            background-color: #3300cc; /* Darken background color on hover */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hello User, please select what you want to do:</h2>
+        <div class = 'button_container'>
+            <a href="{% url 'item_list' %}">
+                <button>Inventory management</button>
+            </a>
+            
+            <a>
+                <button>Cashier</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

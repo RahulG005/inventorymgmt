@@ -19,6 +19,16 @@ def add_item(request):
         form = ItemForm()
     return render(request, 'home/add_item.html', {'form': form})
 
+def delete_item(request,pk):
+    item = get_object_or_404(Item, pk=pk)
+    if request.method == 'POST':
+        item.delete()
+        return redirect('item_list')
+    else:
+        # Render a confirmation template for GET requests
+        return render(request, 'home/delete_item.html', {'item': item})
+
+
 def update_quantity(request, pk):
     item = get_object_or_404(Item, pk=pk)
     if request.method == 'POST':
