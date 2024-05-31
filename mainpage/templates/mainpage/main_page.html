@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Inventory Item List</title>
+    <title>Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,10 +41,34 @@
         .container button:hover {
             background-color: #3300cc; /* Darken background color on hover */
         }
-        
+
+        #logout {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+
+        #logout button {
+            padding: 20px 40px; /* Add padding around each button */
+            background-color: #5100ff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 10px; /* Add margin around each button */
+        }
+        #logout button:hover {
+    background-color: #3300cc; /* Darken background color on hover */
+}
+
+
     </style>
 </head>
 <body>
+    <div id="logout">
+        <button onclick="location.href='{% url 'logout' %}'">Logout</button>
+    </div>
     <div class="container">
         <h2>Hello User, please select what you want to do:</h2>
         <div class = 'button_container'>
