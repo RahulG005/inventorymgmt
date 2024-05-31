@@ -1,146 +1,89 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  @keyframes rotate {
-    100% {
-      background-position: 15% 50%;
-    }
-  }
-  
-  :root {
-    --color-primary: #7656f0;
-  }
-  
-  body {
-    display: grid;
-    place-items: center;
-    margin: 0;
-    height: 100vh;
-    padding: 0 24px;
-    background-color: var(--color-primary);
-    background-image: url("../images/background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: "Euclid Circular A";
-    color: #f9f9f9;
-    animation: rotate 3s infinite alternate linear;
-  }
-  
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgb(0 0 0 / 35%);
-  }
-  
-  .login-card {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    margin: 0 20px;
-    padding: 70px 30px 44px;
-    border-radius: 20px;
-    background: rgb(24 21 36 / 66%);
-    backdrop-filter: blur(10px);
-    text-align: center;
-  }
-
-  .login-card p {
-    font-size: 16px; /* Example: adjust font size */
-  margin-bottom: 10px; /* Example: add bottom margin */
-  }
-  
-  @media (min-width >= 448px) {
-    .login-card {
-      margin: 0;
-      width: 70%;
-      min-width: 400px;
-    }
-  }
-  
-  @media (width >= 500px) {
-    body {
-      padding: 0;
-    }
-  }
-  
-  @media (width >= 628px) {
-    .login-card {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0 44px;
-      width: 50%;
-      max-width: 500px;
-      min-width: auto;
-      display: flex;
-      border-radius: 0;
-      flex-direction: column;
-      justify-content: center;
-    }
-  }
-  
-  .login-card > h2 {
-    font-size: 45px;
-    font-weight: 400;
-    margin: 0 0 12px;
-  }
-  
-  .login-card > h3 {
-    color: rgb(255 255 255 / 38%);
-    margin: 0 0 48px;
-    font-weight: 400;
-    font-size: 24px;
-  }
-  
-
-  form > p {
-    width: 100%;
-    margin: 0;
-    display: grid;
-    gap: 16px;
+body {
+  font-family: 'Arial', sans-serif; /* Default font family */
 }
 
-form > p > input,
-form > p > button {
-    width: 100%;
-    height: 56px;
-    border-radius: 6px;
-    border: 0;
-}
-  
-form > p > input {
-    color: rgb(255 255 255 / 96%);
-    background: rgb(255 255 255 / 8%);
-    font-family: inherit;
-    font-size: 18px;
-    padding: 0 16px;
+.row {
+  display: flex; /* Use flexbox to create a row */
+  height: 100vh; 
 }
 
-form > p > input:focus {
-    outline: var(--color-primary);
+#col-1 {
+  flex: 1; /* Take up 50% of the row */
+  height: 100vh; /* Set height to fill the entire viewport height */
+  z-index: 1010101010;
+  background-image: url('../images/inventory-analysis.jpg');
+  background-size: cover;
+  background-position: center;
 }
-  
-form > p > input::placeholder {
-    color: rgb(255 255 255 / 38%);
+
+#col-2 {
+  flex: 1; /* Take up 50% of the row */
+  height: 100vh; /* Set height to fill the entire viewport height */
+  display: flex; /* Use flexbox to center contents */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  background-color: rgba(254, 250, 252, 0.974);
+  z-index: 1010101010;
 }
-  
-form > p > button {
-    cursor: pointer;
-    background: var(--color-primary);
-    color: #f9f9f9;
-    font-size: 22px;
-    font-weight: 400;
-    text-align: center;
-    transition: all 0.375s;
+
+.login-form {
+  max-width: 800px; /* Limit the width of the form */
+  padding: 40px;
+  text-align: center; /* Center align form contents */
 }
-  
-form > p > a {
-    color: var(--color-primary);
-    font-size: 20px;
-    text-align: left;
-    text-decoration: none;
-    margin-bottom: 30px;
+
+
+.login-heading {
+  font-weight: bold; /* Make heading bold */
+  font-size: 2.5rem; /* Increase font size */
+  margin-bottom: 30px; /* Add some space below the heading */
 }
+
+.form-group {
+  margin-bottom: 30px; /* Add space between form fields */
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Make form fields full width */
+  padding: 15px; /* Add padding */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 10px; /* Add border radius */
+  font-size: 1.2rem;
+}
+
+.btn-login {
+  width: 100%; /* Make button full width */
+  padding: 15px; /* Increase padding for button */
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make button text bold */
+  background-color: #007bff; /* Change button background color */
+  border: none; /* Remove border */
+  border-radius: 10px; /* Increase border radius */
+  color: #fff; /* Set text color to white */
+  cursor: pointer; /* Add cursor pointer */
+}
+
+.btn-login:hover {
+  background-color: #0056b3; /* Change button background color on hover */
+}
+
+.register {
+  font-size: 1.2rem; /* Font size for the register text */
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif; /* Font family for register text */
+}
+
+.register a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold; /* Bold font for the link */
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+
+

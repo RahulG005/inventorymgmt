@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif; /* Default font family */
+  }
+
+.row {
+    display: flex; /* Use flexbox to create a row */
+    height: 100vh; 
+  }
+  
+#col-1 {
+    flex: 1; /* Take up 50% of the row */
+    height: 100vh; /* Set height to fill the entire viewport height */
+    z-index: 1010101010;
+    background-image: url('../images/inventory-analysis.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+#col-2 {
+    flex: 1; /* Take up 50% of the row */
+    height: 100vh; /* Set height to fill the entire viewport height */
+    display: flex; /* Use flexbox to center contents */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    background-color: rgba(254, 250, 252, 0.974);
+    z-index: 1010101010;
+  }
+
+  .input-group {
+    margin-bottom: 20px; /* Add spacing between input fields */
+}
+
+.register-form {
+    max-width: 800px; /* Limit the width of the form */
+    padding: 40px;
+    text-align: center; /* Center align form contents */
+  }
+
+  .register-heading {
+    font-weight: bold; /* Make heading bold */
+    font-size: 2.5rem; /* Increase font size */
+    margin-bottom: 30px; /* Add some space below the heading */
+  }
+
+  input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%; /* Make form fields full width */
+  padding: 15px; /* Add padding */
+  border: 2px solid #ccc; /* Add border */
+  border-radius: 10px; /* Add border radius */
+  font-size: 1.2rem;
+}
+
+.btn-register {
+    width: 100%; /* Make button full width */
+    padding: 15px; /* Increase padding for button */
+    font-size: 1.2rem; /* Increase font size */
+    font-weight: bold; /* Make button text bold */
+    background-color: #007bff; /* Change button background color */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Increase border radius */
+    color: #fff; /* Set text color to white */
+    cursor: pointer; /* Add cursor pointer */
+  }
+
+.btn-register:hover {
+    background-color: #0056b3; /* Change button background color on hover */
+  }
+
+.signin {
+    font-size: 1.2rem; /* Font size for the register text */
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif; /* Font family for register text */
+  }
+.signin a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold; /* Bold font for the link */
+  }
+  
+.signin a:hover {
+    text-decoration: underline;
+  }
+  
